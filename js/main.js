@@ -1,5 +1,8 @@
 // main.js
 
+const Moralis = require('moralis');
+// ES6 Minimized
+import Moralis from 'moralis/dist/moralis.min.js';
 
 const serverUrl = "https://ilfapq8h4jyq.usemoralis.com:2053/server";
 const appId = "C2fy4GQRDTtKZpuTPEElzLXFObQMotGnvt7uFMT2";
