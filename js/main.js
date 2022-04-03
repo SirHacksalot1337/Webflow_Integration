@@ -96,7 +96,7 @@ document.getElementById("btn-logout").onclick = logOut;
 document.getElementById("btn-mint").onclick = mint;
 var slider = document.getElementById("slider-mint");
 
-amount = slider.value; // Display the default slider value
+//amount = slider.value; // Display the default slider value
 
 slider.oninput = function() {
   amount = this.value * fee;
