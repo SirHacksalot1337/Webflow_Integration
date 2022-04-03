@@ -93,7 +93,7 @@ function fixURL(url){
 
 document.getElementById("btn-login").onclick = login;
 document.getElementById("btn-logout").onclick = logOut;
-document.getElement("btn-mint").onclick = mint;
+document.getElementById("btn-mint").onclick = mint;
 var slider = document.getElementById("slider-input");
 
 //amount = slider.value; // Display the default slider value
