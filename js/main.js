@@ -7,7 +7,7 @@ const chain = "avalanche testnet"
 
 
 var amount = 1;
-const fee = 1;
+const fee = 2;
 
 
 Moralis.start({ serverUrl, appId });
@@ -99,6 +99,5 @@ var slider = document.getElementById("slider-mint");
 amount = slider.value; // Display the default slider value
 
 slider.oninput = function() {
-  output.innerHTML = this.value;
-  amount = this.value;
+  amount = this.value * fee;
 }
