@@ -94,10 +94,9 @@ function fixURL(url){
 document.getElementById("btn-login").onclick = login;
 document.getElementById("btn-logout").onclick = logOut;
 document.getElementById("btn-mint").onclick = mint;
-var slider = document.getElementById("mint");
-var output = document.getElementById("mint-amount")
+var slider = document.getElementById("slider-mint");
 
-output.innerHTML = slider.value; // Display the default slider value
+amount = slider.value; // Display the default slider value
 
 slider.oninput = function() {
   output.innerHTML = this.value;
