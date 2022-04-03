@@ -101,6 +101,6 @@ amount = 1; // Display the default slider value
 
 
 slider.oninput = function() {
-  amount = parseInt(this.value);
-  console.log(this.value)
+  amount = parseInt(this.val());
+  console.log(this.val())
 }
