@@ -2,7 +2,7 @@
 
 const serverUrl = "https://ilfapq8h4jyq.usemoralis.com:2053/server";
 const appId = "C2fy4GQRDTtKZpuTPEElzLXFObQMotGnvt7uFMT2";
-const contract = "0x5295Ed17B4110e585adAdC77e20529EeBf8E037d"
+const contract = "0xd203058935aa3Bac85AA4a6abF5732c5d0ebf74D"
 const chain = "avalanche testnet"
 
 
