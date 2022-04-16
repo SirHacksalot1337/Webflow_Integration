@@ -24,6 +24,7 @@ async function cashedSession(){
       console.log(user.get('ethAddress'))
       console.log();
       returnUserNFTData();
+      buildImage();
    } catch(error) {
      console.log(error)
    }
@@ -32,7 +33,7 @@ async function cashedSession(){
 
 
 
-async function returnUserNFTData() {
+function returnUserNFTData() {
   const userEthNFTs = await Moralis.Web3API.account.getNFTsForContract({chain:chain, token_address:contract});
   //console.log(userEthNFTs);
 
@@ -46,10 +47,8 @@ async function returnUserNFTData() {
       $("#content").html($("#content").html()+"<img width=100 height=100 src='"+fixURL(data.image)+"'/>");
       linkArr.push(data.image);
     })
-  }).then(() => {
-    console.log(linkArr)
-    buildImage();
   })
+  console.log(linkArr)
 }
 
 async function buildImage() {
