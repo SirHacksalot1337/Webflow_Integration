@@ -48,6 +48,8 @@ async function returnUserNFTData() {
       $("#content").html($("#content").html()+"<img width=100 height=100 src='"+fixURL(data.image)+"'/>");
       linkArr.push(data.image);
       items++;
+      console.log(items);
+      console.log(userEthNFTs.result.length);
       if(items === userEthNFTs.result.lenth){
         buildImage();
         console.log(linkArr);
