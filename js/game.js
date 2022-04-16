@@ -11,7 +11,7 @@ const chain = "avalanche testnet"
 var amount = 1;
 const fee = 2;
 
-linkArr = [];
+const linkArr = [];
 
 
 
@@ -23,7 +23,7 @@ async function cashedSession(){
       console.log(user)
       console.log(user.get('ethAddress'))
       console.log();
-      buildImage();
+      returnUserNFTData();
    } catch(error) {
      console.log(error)
    }
@@ -46,20 +46,20 @@ async function returnUserNFTData() {
       $("#content").html($("#content").html()+"<img width=100 height=100 src='"+fixURL(data.image)+"'/>");
       linkArr.push(data.image);
     })
+  }).then(() => {
+    console.log(linkArr)
+    buildImage();
   })
-  console.log(linkArr);
-  return 1;
 }
 
 async function buildImage() {
   console.log("building images")
-  returnUserNFTData().then((value) => {
   for (const image of linkArr) {
     console.log(image);
     img = document.createElement('img');
     img.src = image;
     document.getElementById('survivor_list').appendChild(img);
-  }})
+  }
 }
 
 
