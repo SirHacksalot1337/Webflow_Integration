@@ -73,4 +73,5 @@ function fixURL(url){
 
 
 cashedSession();
-buildImage();
+
+window.onload = buildImage();
