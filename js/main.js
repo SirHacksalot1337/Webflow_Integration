@@ -27,7 +27,6 @@ async function cashedSession(){
       console.log(user)
       console.log(user.get('ethAddress'))
       console.log();
-      returnUserNFTData();
    } catch(error) {
      console.log(error)
    }
@@ -43,7 +42,6 @@ async function login() {
       console.log(user)
       console.log(user.get('ethAddress'))
       console.log();
-      returnUserNFTData()
    } catch(error) {
      console.log(error)
    }
@@ -81,34 +79,6 @@ async function mint() {
 }
 
 
-async function returnUserNFTData() {
-  const userEthNFTs = await Moralis.Web3API.account.getNFTsForContract({chain:chain, token_address:contract});
-  //console.log(userEthNFTs);
-
-  userEthNFTs.result.forEach(function(nft){
-    let url = fixURL(nft.token_uri);
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      $("#content").html($("#content").html()+"<h2>"+data.name+"</h2>");
-      $("#content").html($("#content").html()+"<h3>"+data.description+"</h3>");
-      $("#content").html($("#content").html()+"<img width=100 height=100 src='"+fixURL(data.image)+"'/>");
-      linkArr.push(data.image);
-    })
-  })
-  console.log(linkArr);
-}
-
-function buildImage() {
-  linkArr.forEach(function(image){
-    img = document.createElement('img')
-    img.src = image;
-    document.getElementById('survivor_list').appendChild(img);
-  })
-}
-
-
-
 function fixURL(url){
   if(url.startsWith("https://gateway")){
     console.log("https://ipfs.moralis.io:2053/ipfs/"+url.split("https://gateway.moralisipfs.com/ipfs/").slice(-1))
@@ -122,7 +92,6 @@ function fixURL(url){
 document.getElementById("btn-login").onclick = login;
 document.getElementById("btn-logout").onclick = logOut;
 document.getElementById("btn-mint").onclick = mint;
-document.getElementById("btn-play").onclick = buildImage;
 var slider = document.getElementById("slider-input");
 
 //amount = slider.value; // Display the default slider value

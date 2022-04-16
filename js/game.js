@@ -24,6 +24,7 @@ async function cashedSession(){
       console.log(user.get('ethAddress'))
       console.log();
       returnUserNFTData();
+      buildImage();
    } catch(error) {
      console.log(error)
    }
@@ -72,6 +73,4 @@ function fixURL(url){
 
 
 cashedSession();
-buildImage();
-
 
