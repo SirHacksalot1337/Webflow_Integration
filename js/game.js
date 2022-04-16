@@ -48,6 +48,7 @@ async function returnUserNFTData() {
     })
   })
   console.log(linkArr);
+  buildImage();
 }
 
 async function buildImage() {
@@ -74,4 +75,3 @@ function fixURL(url){
 
 
 cashedSession();
-window.onload = buildImage();
