@@ -16,6 +16,8 @@ linkArr = [];
 
 
 Moralis.start({ serverUrl, appId });
+Moralis.User.enableUnsafeCurrentUser();
+
 async function cashedSession(){
   let user = Moralis.User.current();
   if (user) {
