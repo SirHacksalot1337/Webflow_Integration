@@ -119,7 +119,7 @@ function fixURL(url){
   }
 }
 
-document.addEventListener('load', cashedSession);
+document.getElementById("btn-login").onload = cashedSession;
 document.getElementById("btn-login").onclick = login;
 document.getElementById("btn-logout").onclick = logOut;
 document.getElementById("btn-mint").onclick = mint;
