@@ -47,8 +47,10 @@ async function returnUserNFTData() {
       $("#content").html($("#content").html()+"<img width=100 height=100 src='"+fixURL(data.image)+"'/>");
       linkArr.push(data.image);
     })
+  }).then(data => { 
+    buildImage();
+    console.log(linkArr);
   })
-  console.log(linkArr)
 }
 
 async function buildImage() {
