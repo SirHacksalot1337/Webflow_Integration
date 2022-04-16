@@ -33,7 +33,7 @@ async function cashedSession(){
 
 
 
-function returnUserNFTData() {
+async function returnUserNFTData() {
   const userEthNFTs = await Moralis.Web3API.account.getNFTsForContract({chain:chain, token_address:contract});
   //console.log(userEthNFTs);
 
