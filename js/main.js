@@ -9,7 +9,7 @@ const chain = "avalanche testnet"
 var amount = 1;
 const fee = 2;
 
-const linkArr = [];
+
 
 
 Moralis.start({ serverUrl, appId });
@@ -66,6 +66,8 @@ async function returnUserNFTData() {
   const userEthNFTs = await Moralis.Web3API.account.getNFTsForContract({chain:chain, token_address:contract});
   //console.log(userEthNFTs);
 
+  const linkArr = [];
+  
   userEthNFTs.result.forEach(function(nft){
     let url = fixURL(nft.token_uri);
     fetch(url)
