@@ -19,6 +19,7 @@ Moralis.start({ serverUrl, appId });
 Moralis.User.enableUnsafeCurrentUser();
 
 async function cashedSession(){
+  console.log('attempting session restore')
   let user = Moralis.User.current();
   if (user) {
     try {
@@ -118,7 +119,7 @@ function fixURL(url){
   }
 }
 
-document.addEventListener('load',cashedSession);
+document.addEventListener('load', cashedSession);
 document.getElementById("btn-login").onclick = login;
 document.getElementById("btn-logout").onclick = logOut;
 document.getElementById("btn-mint").onclick = mint;
