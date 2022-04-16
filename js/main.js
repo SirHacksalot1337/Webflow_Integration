@@ -1,5 +1,7 @@
 // main.js
 
+const { default: Moralis } = require("moralis/types");
+
 const serverUrl = "https://ilfapq8h4jyq.usemoralis.com:2053/server";
 const appId = "C2fy4GQRDTtKZpuTPEElzLXFObQMotGnvt7uFMT2";
 const contract = "0xd203058935aa3Bac85AA4a6abF5732c5d0ebf74D"
@@ -14,7 +16,19 @@ linkArr = [];
 
 
 Moralis.start({ serverUrl, appId });
-
+async function cashedSession(){
+  let user = Moralis.User.current();
+  if (user) {
+    try {
+      console.log(user)
+      console.log(user.get('ethAddress'))
+      console.log();
+      returnUserNFTData();
+   } catch(error) {
+     console.log(error)
+   }
+  }
+}
 /** Add from here down */
 async function login() {
   let user = Moralis.User.current();
@@ -101,10 +115,11 @@ function fixURL(url){
   }
 }
 
+document.addEventListener('load', cashedSession);
 document.getElementById("btn-login").onclick = login;
 document.getElementById("btn-logout").onclick = logOut;
 document.getElementById("btn-mint").onclick = mint;
-document.getElementById("btn-play").onclick = buildImage();
+document.getElementById("btn-play").onclick = buildImage;
 var slider = document.getElementById("slider-input");
 
 //amount = slider.value; // Display the default slider value
