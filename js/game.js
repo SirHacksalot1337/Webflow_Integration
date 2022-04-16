@@ -76,7 +76,7 @@ function fixURL(url){
 }
 
 
-
-document.getElementById("btn-play").onclick = buildImage;
+cashedSession();
+buildImage();
 
 
