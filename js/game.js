@@ -50,7 +50,7 @@ async function returnUserNFTData() {
       items++;
       console.log(items);
       console.log(userEthNFTs.result.length);
-      if(items == userEthNFTs.result.lenth){
+      if(items === userEthNFTs.result.length){
         buildImage();
         console.log(linkArr);
       }
