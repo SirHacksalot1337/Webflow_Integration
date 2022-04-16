@@ -1,6 +1,6 @@
 // main.js
 
-const { default: Moralis } = require("moralis/types");
+//const { default: Moralis } = require("moralis/types");
 
 const serverUrl = "https://ilfapq8h4jyq.usemoralis.com:2053/server";
 const appId = "C2fy4GQRDTtKZpuTPEElzLXFObQMotGnvt7uFMT2";
@@ -115,7 +115,7 @@ function fixURL(url){
   }
 }
 
-document.addEventListener('load', cashedSession);
+document.addEventListener('load',cashedSession);
 document.getElementById("btn-login").onclick = login;
 document.getElementById("btn-logout").onclick = logOut;
 document.getElementById("btn-mint").onclick = mint;
