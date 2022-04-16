@@ -51,7 +51,7 @@ async function returnUserNFTData() {
   console.log(linkArr);
 }
 
-function buildImage() {
+async function buildImage() {
   linkArr.forEach(function(image){
     console.log(image);
     img = document.createElement('img');
