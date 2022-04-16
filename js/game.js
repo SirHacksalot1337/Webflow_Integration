@@ -51,6 +51,7 @@ async function returnUserNFTData() {
 }
 
 async function buildImage() {
+  console.log("building images")
   for (const image of linkArr) {
     console.log(image);
     img = document.createElement('img');
@@ -73,5 +74,5 @@ function fixURL(url){
 
 
 cashedSession();
-
+DelayNod
 window.onload = buildImage();
