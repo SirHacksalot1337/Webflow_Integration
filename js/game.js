@@ -74,5 +74,4 @@ function fixURL(url){
 
 
 cashedSession();
-DelayNod
 window.onload = buildImage();
