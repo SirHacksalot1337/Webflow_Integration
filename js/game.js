@@ -31,11 +31,6 @@ async function cashedSession(){
 }
 
 
-async function logOut() {
-  await Moralis.User.logOut();
-  console.log("logged out");
-}
-
 
 async function returnUserNFTData() {
   const userEthNFTs = await Moralis.Web3API.account.getNFTsForContract({chain:chain, token_address:contract});
