@@ -20,7 +20,6 @@ async function cashedSession(){
   let user = Moralis.User.current();
   if (user) {
     try {
-      await Moralis.enableWeb3();
       console.log(user)
       console.log(user.get('ethAddress'))
       console.log();
@@ -30,51 +29,11 @@ async function cashedSession(){
    }
   }
 }
-/** Add from here down */
-async function login() {
-  let user = Moralis.User.current();
-  if (!user) {
-   try {
-      await Moralis.enableWeb3();
-      user = await Moralis.authenticate({ signingMessage: "Hello World!" })
-      console.log(user)
-      console.log(user.get('ethAddress'))
-      console.log();
-      returnUserNFTData()
-   } catch(error) {
-     console.log(error)
-   }
-  }
-}
+
 
 async function logOut() {
   await Moralis.User.logOut();
   console.log("logged out");
-}
-
-async function mint() {
-  let options = {
-    contractAddress: contract,
-    functionName: "mintSurvivor",
-    abi:[{
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "mintSurvivor",
-      "outputs": [],
-      "stateMutability": "payable",
-      "type": "function"
-    }],
-    params:{
-      _amount: amount
-    },
-    msgValue: Moralis.Units.ETH(fee*amount)
-  }
-  await Moralis.executeFunction(options);
 }
 
 
@@ -116,18 +75,8 @@ function fixURL(url){
   }
 }
 
-document.addEventListener('load',cashedSession);
-document.getElementById("btn-login").onclick = login;
-document.getElementById("btn-logout").onclick = logOut;
-document.getElementById("btn-mint").onclick = mint;
+
+
 document.getElementById("btn-play").onclick = buildImage;
-var slider = document.getElementById("slider-input");
-
-//amount = slider.value; // Display the default slider value
-amount = 1; // Display the default slider value
 
 
-slider.oninput = function() {
-  amount = this.value;
-  console.log(this.value)
-}
