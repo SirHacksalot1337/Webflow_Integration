@@ -64,8 +64,8 @@ async function buildImage() {
     console.log(image);
     img = document.createElement('img');
     img.src = image;
-    img.style.height = "50px";
-    img.style.width = "50px"
+    img.style.height = "100px";
+    img.style.width = "100px"
     document.getElementById('survivor_list').appendChild(img);
   }
 }
