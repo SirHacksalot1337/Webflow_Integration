@@ -36,6 +36,8 @@ async function returnUserNFTData() {
   const userEthNFTs = await Moralis.Web3API.account.getNFTsForContract({chain:chain, token_address:contract});
   //console.log(userEthNFTs);
 
+  var items = 0;
+
   userEthNFTs.result.forEach(function(nft){
     let url = fixURL(nft.token_uri);
     fetch(url)
@@ -45,10 +47,12 @@ async function returnUserNFTData() {
       $("#content").html($("#content").html()+"<h3>"+data.description+"</h3>");
       $("#content").html($("#content").html()+"<img width=100 height=100 src='"+fixURL(data.image)+"'/>");
       linkArr.push(data.image);
+      items++;
+      if(items === userEthNFTs.result.lenth){
+        buildImage();
+        console.log(linkArr);
+      }
     })
-  }).then(data => { 
-    buildImage();
-    console.log(linkArr);
   })
 }
 
