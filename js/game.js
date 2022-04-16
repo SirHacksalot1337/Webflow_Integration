@@ -23,7 +23,8 @@ async function cashedSession(){
       console.log(user)
       console.log(user.get('ethAddress'))
       console.log();
-      await setTimeout(buildImage,5000);
+      buildImage();
+      buildImage();
    } catch(error) {
      console.log(error)
    }
