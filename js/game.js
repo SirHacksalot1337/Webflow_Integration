@@ -53,7 +53,8 @@ async function returnUserNFTData() {
 
 function buildImage() {
   linkArr.forEach(function(image){
-    img = document.createElement('img')
+    console.log(image);
+    img = document.createElement('img');
     img.src = image;
     document.getElementById('survivor_list').appendChild(img);
   })
