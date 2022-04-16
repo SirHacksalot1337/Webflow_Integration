@@ -52,12 +52,12 @@ async function returnUserNFTData() {
 }
 
 async function buildImage() {
-  linkArr.forEach(function(image){
+  for (const image of linkArr) {
     console.log(image);
     img = document.createElement('img');
     img.src = image;
     document.getElementById('survivor_list').appendChild(img);
-  })
+  }
 }
 
 
