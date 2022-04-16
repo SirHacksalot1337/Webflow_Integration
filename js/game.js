@@ -24,7 +24,6 @@ async function cashedSession(){
       console.log(user.get('ethAddress'))
       console.log();
       buildImage();
-      buildImage();
    } catch(error) {
      console.log(error)
    }
@@ -54,13 +53,13 @@ async function returnUserNFTData() {
 
 async function buildImage() {
   console.log("building images")
-  await returnUserNFTData();
+  returnUserNFTData().then((value) => {
   for (const image of linkArr) {
     console.log(image);
     img = document.createElement('img');
     img.src = image;
     document.getElementById('survivor_list').appendChild(img);
-  }
+  }})
 }
 
 
