@@ -134,6 +134,7 @@ async function stake() {
     }
   }
   await Moralis.executeFunction(options);
+  location.reload();
 }
 
 
