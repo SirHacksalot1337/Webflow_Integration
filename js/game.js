@@ -70,7 +70,7 @@ function fixURL(url){
 
 async function buildImage() {
   console.log("building images")
-  var id = 0;
+  var id = 1;
   for (const image of linkArr) {
     console.log(image);
     img = document.createElement('img');
