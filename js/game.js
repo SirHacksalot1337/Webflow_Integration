@@ -58,20 +58,6 @@ async function returnUserNFTData() {
   })
 }
 
-async function buildImage() {
-  console.log("building images")
-  for (const image of linkArr) {
-    console.log(image);
-    img = document.createElement('img');
-    img.src = image;
-    img.style.height = "100px";
-    img.style.width = "100px"
-    document.getElementById('survivor_list').appendChild(img);
-  }
-}
-
-
-
 function fixURL(url){
   if(url.startsWith("https://gateway")){
     console.log("https://ipfs.moralis.io:2053/ipfs/"+url.split("https://gateway.moralisipfs.com/ipfs/").slice(-1))
@@ -81,6 +67,25 @@ function fixURL(url){
     return url+"?format=json";
   }
 }
+
+async function buildImage() {
+  console.log("building images")
+  for (const image of linkArr) {
+    console.log(image);
+    img = document.createElement('img');
+    img.src = image;
+    img.style.height = "100px";
+    img.style.width = "100px"
+    img.onclick = mark(this);
+    document.getElementById('survivor_list').appendChild(img);
+  }
+}
+
+
+function mark(el) {
+  el.style.border = "2px solid blue";
+}
+
 
 
 cashedSession();
