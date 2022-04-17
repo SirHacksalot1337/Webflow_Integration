@@ -78,7 +78,7 @@ async function buildImage() {
     img.setAttribute("class","img");
     img.src = image;
     document.getElementById('survivor_list').appendChild(img);
-    img.onclick = mark(id++);
+    img.onclick = function(){mark(id++);}
   }
 }
 
@@ -86,13 +86,13 @@ async function buildImage() {
 function mark(imgId) {
   element = document.getElementById(imgId)
   element.setAttribute("class", "imgSelected");
-  element.onclick = unmark(imgId);
+  element.onclick = function(){unmark(imgId);}
 }
 
 function unmark(imgId) {
   element = document.getElementById(imgId)
   element.setAttribute("class", "img");
-  element.onclick = mark(imgId);
+  element.onclick = function(){mark(imgId);}
 }
 
 
