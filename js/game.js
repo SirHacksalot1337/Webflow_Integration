@@ -23,6 +23,7 @@ async function cashedSession(){
   let user = Moralis.User.current();
   if (user) {
     try {
+      await Moralis.enableWeb3();
       console.log(user)
       console.log(user.get('ethAddress'))
       console.log();
@@ -107,7 +108,7 @@ function unmark(imgId) {
 
 async function stake() {
   let options = {
-    contractAddress: contract,
+    contractAddress: stakeContract,
     functionName: "stake",
     abi:[{
       "inputs": [
