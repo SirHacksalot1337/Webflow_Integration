@@ -70,7 +70,7 @@ function fixURL(url){
   }
 }
 
-async function buildImage() {
+function buildImage() {
   console.log("building images")
   for (var data of linkArr) {
     console.log(data);
