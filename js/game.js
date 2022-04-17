@@ -81,24 +81,24 @@ function buildImage() {
     img.id = survivorId;
     img.setAttribute("class","img");
     document.getElementById('survivor_list').appendChild(img);
-    img.onclick = function(){mark(survivorId, survivorId);}
+    img.onclick = function(){mark(this.id);}
   }
 }
 
 
-function mark(imgId, survivorId) {
+function mark(imgId) {
   element = document.getElementById(imgId)
   element.setAttribute("class", "imgSelected");
-  element.onclick = function(){unmark(imgId, survivorId);}
-  selectedSurvivors.push(survivorId);
+  element.onclick = function(){unmark(imgId);}
+  selectedSurvivors.push(imgId);
   console.log(selectedSurvivors);
 }
 
-function unmark(imgId, survivorId) {
+function unmark(imgId) {
   element = document.getElementById(imgId)
   element.setAttribute("class", "img");
   element.onclick = function(){mark(imgId);}
-  var survivorIndex = selectedSurvivors.indexOf(survivorId) 
+  var survivorIndex = selectedSurvivors.indexOf(imgId) 
   selectedSurvivors.splice(survivorIndex);
   console.log(selectedSurvivors);
 }
