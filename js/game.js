@@ -72,7 +72,7 @@ function fixURL(url){
 
 async function buildImage() {
   console.log("building images")
-  for (const data of linkArr) {
+  for (var data of linkArr) {
     console.log(data);
     image = data.image;
     survivorId = data.tokenID;
