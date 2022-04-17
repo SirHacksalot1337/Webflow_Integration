@@ -78,7 +78,7 @@ function buildImage() {
     survivorId = data.tokenID;
     img = document.createElement('img');
     img.src = image;
-    img.setAttribute("id", survivorId);
+    img.id = survivorId;
     img.setAttribute("class","img");
     document.getElementById('survivor_list').appendChild(img);
     img.onclick = function(){mark(survivorId, survivorId);}
