@@ -76,14 +76,14 @@ async function buildImage() {
     img.src = image;
     img.style.height = "100px";
     img.style.width = "100px"
-    img.onclick = mark(this);
+    img.onclick = mark(img);
     document.getElementById('survivor_list').appendChild(img);
   }
 }
 
 
-function mark(el) {
-  el.style.border = "2px solid blue";
+function mark(imgId) {
+  document.getElementById(imgId).style.border = "2px solid blue";
 }
 
 
