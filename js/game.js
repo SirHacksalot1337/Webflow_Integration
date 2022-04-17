@@ -74,12 +74,11 @@ async function buildImage() {
   for (const image of linkArr) {
     console.log(image);
     img = document.createElement('img');
-    img.setAttribute("id", id);
+    img.setAttribute("id", id++);
     img.setAttribute("class","img");
     img.src = image;
     document.getElementById('survivor_list').appendChild(img);
-    img.onclick = function(){mark(id);}
-    id++
+    img.onclick = function(){mark(id++);}
   }
 }
 
