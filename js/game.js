@@ -70,7 +70,8 @@ function fixURL(url){
 
 async function buildImage() {
   console.log("building images")
-  var id = 1;
+  var id = 0;
+  var counter = 0;
   for (const image of linkArr) {
     console.log(image);
     img = document.createElement('img');
@@ -78,7 +79,7 @@ async function buildImage() {
     img.setAttribute("class","img");
     img.src = image;
     document.getElementById('survivor_list').appendChild(img);
-    img.onclick = function(){mark(id++);}
+    img.onclick = function(){mark(counter++);}
   }
 }
 
