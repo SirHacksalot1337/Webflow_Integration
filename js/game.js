@@ -70,20 +70,23 @@ function fixURL(url){
 
 async function buildImage() {
   console.log("building images")
+  var id = 0;
   for (const image of linkArr) {
     console.log(image);
     img = document.createElement('img');
+    img.setAttribute("id", id);
+    img.setAttribute("class","img");
     img.src = image;
     img.style.height = "100px";
-    img.style.width = "100px"
-    img.onclick = mark(img);
+    img.style.width = "100px";
+    img.onclick = mark(id++);
     document.getElementById('survivor_list').appendChild(img);
   }
 }
 
 
 function mark(imgId) {
-  document.getElementById(imgId).style.border = "2px solid blue";
+  document.getElementById(imgId).setAttribute("class", "imgSelected");
 }
 
 
