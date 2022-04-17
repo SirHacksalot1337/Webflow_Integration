@@ -75,7 +75,7 @@ async function buildImage() {
   for (var data of linkArr) {
     console.log(data);
     image = data.image;
-    survivorId = data.tokenID;
+    var survivorId = data.tokenID;
     img = document.createElement('img');
     img.setAttribute("id", survivorId);
     img.setAttribute("class","img");
