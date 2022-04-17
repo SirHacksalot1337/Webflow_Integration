@@ -72,18 +72,16 @@ function fixURL(url){
 
 async function buildImage() {
   console.log("building images")
-  var id = 0;
-  var counter = 0;
   for (const data of linkArr) {
     console.log(data);
     image = data.image;
+    survivorId = data.tokenID;
     img = document.createElement('img');
-    img.setAttribute("id", id++);
+    img.setAttribute("id", survivorId);
     img.setAttribute("class","img");
     img.src = image;
-    survivorId = data.tokenID;
     document.getElementById('survivor_list').appendChild(img);
-    img.onclick = function(){mark(counter++, survivorId);}
+    img.onclick = function(){mark(survivorId, survivorId);}
   }
 }
 
