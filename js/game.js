@@ -84,7 +84,15 @@ async function buildImage() {
 
 
 function mark(imgId) {
-  document.getElementById(imgId).setAttribute("class", "imgSelected");
+  element = document.getElementById(imgId)
+  element.setAttribute("class", "imgSelected");
+  element.onclick = unmark(imgId);
+}
+
+function unmark(imgId) {
+  element = document.getElementById(imgId)
+  element.setAttribute("class", "img");
+  element.onclick = mark(imgId);
 }
 
 
