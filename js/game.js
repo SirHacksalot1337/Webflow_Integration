@@ -77,8 +77,6 @@ async function buildImage() {
     img.setAttribute("id", id);
     img.setAttribute("class","img");
     img.src = image;
-    img.style.height = "100px";
-    img.style.width = "100px";
     img.onclick = mark(id++);
     document.getElementById('survivor_list').appendChild(img);
   }
