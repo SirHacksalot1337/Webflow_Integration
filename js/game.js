@@ -5,6 +5,7 @@
 const serverUrl = "https://ilfapq8h4jyq.usemoralis.com:2053/server";
 const appId = "C2fy4GQRDTtKZpuTPEElzLXFObQMotGnvt7uFMT2";
 const contract = "0xd203058935aa3Bac85AA4a6abF5732c5d0ebf74D"
+const stakeContract = "0xaf9a036655bfE05ab653B57C16c9983c944CF43B"
 const chain = "avalanche testnet"
 
 
@@ -90,7 +91,7 @@ function mark(imgId) {
   element = document.getElementById(imgId)
   element.setAttribute("class", "imgSelected");
   element.onclick = function(){unmark(imgId);}
-  selectedSurvivors.push(imgId);
+  selectedSurvivors.push(parseInt(imgId));
   console.log(selectedSurvivors);
 }
 
@@ -98,10 +99,44 @@ function unmark(imgId) {
   element = document.getElementById(imgId)
   element.setAttribute("class", "img");
   element.onclick = function(){mark(imgId);}
-  var survivorIndex = selectedSurvivors.indexOf(imgId) 
+  var survivorIndex = selectedSurvivors.indexOf(parseInt(imgId)); 
   selectedSurvivors.splice(survivorIndex);
   console.log(selectedSurvivors);
 }
+
+
+async function stake() {
+  let options = {
+    contractAddress: contract,
+    functionName: "stake",
+    abi:[{
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "_tokenIds",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "string",
+          "name": "_location",
+          "type": "string"
+        }
+      ],
+      "name": "stake",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }],
+    params:{
+      _tokenIds: selectedSurvivors,
+      _location: "TrainingRange"
+    }
+  }
+  await Moralis.executeFunction(options);
+}
+
+
+
 
 
 
