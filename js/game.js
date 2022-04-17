@@ -13,6 +13,8 @@ const fee = 2;
 
 const linkArr = [];
 
+const selectedSurvivors = [];
+
 
 
 Moralis.start({ serverUrl, appId });
@@ -46,7 +48,7 @@ async function returnUserNFTData() {
       $("#content").html($("#content").html()+"<h2>"+data.name+"</h2>");
       $("#content").html($("#content").html()+"<h3>"+data.description+"</h3>");
       $("#content").html($("#content").html()+"<img width=100 height=100 src='"+fixURL(data.image)+"'/>");
-      linkArr.push(data.image);
+      linkArr.push(data);
       items++;
       console.log(items);
       console.log(userEthNFTs.result.length);
@@ -72,28 +74,35 @@ async function buildImage() {
   console.log("building images")
   var id = 0;
   var counter = 0;
-  for (const image of linkArr) {
-    console.log(image);
+  for (const data of linkArr) {
+    console.log(data);
+    image = data.image;
     img = document.createElement('img');
     img.setAttribute("id", id++);
     img.setAttribute("class","img");
     img.src = image;
+    survivorId = data.tokenID;
     document.getElementById('survivor_list').appendChild(img);
-    img.onclick = function(){mark(counter++);}
+    img.onclick = function(){mark(counter++, survivorId);}
   }
 }
 
 
-function mark(imgId) {
+function mark(imgId, survivorId) {
   element = document.getElementById(imgId)
   element.setAttribute("class", "imgSelected");
-  element.onclick = function(){unmark(imgId);}
+  element.onclick = function(){unmark(imgId, survivorId);}
+  selectedSurvivors.push(survivorId);
+  console.log(selectedSurvivors);
 }
 
-function unmark(imgId) {
+function unmark(imgId, survivorId) {
   element = document.getElementById(imgId)
   element.setAttribute("class", "img");
   element.onclick = function(){mark(imgId);}
+  var survivorIndex = selectedSurvivors.indexOf(survivorId) 
+  selectedSurvivors.splice(survivorIndex);
+  console.log(selectedSurvivors);
 }
 
 
