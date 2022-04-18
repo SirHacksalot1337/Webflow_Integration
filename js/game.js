@@ -137,9 +137,6 @@ async function stake() {
   location.reload();
 }
 
-
-
-
-
-
 cashedSession();
+
+document.getElementById("btn-expedition").onclick = stake;
