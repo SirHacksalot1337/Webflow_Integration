@@ -1,7 +1,7 @@
 // main.js
 
 
-import { default as Moralis } from "moralis/types";
+//import { default as Moralis } from "moralis/types";
 
 const serverUrl = "https://ilfapq8h4jyq.usemoralis.com:2053/server";
 const appId = "C2fy4GQRDTtKZpuTPEElzLXFObQMotGnvt7uFMT2";
