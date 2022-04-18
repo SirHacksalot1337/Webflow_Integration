@@ -48,7 +48,7 @@ async function returnUserNFTData() {
 
   userEthNFTs.result.forEach(function(nft){
     let url = fixURL(nft.token_uri);
-    fetch(url,{mode: "no-cors"})
+    fetch(url)
     .then(response => response.json())
     .then(data => {
       $("#content").html($("#content").html()+"<h2>"+data.name+"</h2>");
