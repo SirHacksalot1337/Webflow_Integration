@@ -29,7 +29,7 @@ async function cashedSession(){
       console.log(user)
       console.log(user.get('ethAddress'))
       console.log();
-      const balance = await Moralis.Web3API.account.getTokenBalances({chain:chain, token_address:tokenContract}).balance;
+      const balance = await Moralis.Web3API.account.getTokenBalances({chain:chain, token_address:tokenContract});
       console.log(balance);
       returnUserNFTData();
    } catch(error) {
