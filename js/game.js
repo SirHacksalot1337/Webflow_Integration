@@ -1,6 +1,5 @@
 // main.js
 
-const { default: Moralis } = require("moralis/types");
 
 //const { default: Moralis } = require("moralis/types");
 
