@@ -143,4 +143,4 @@ async function stake() {
 
 cashedSession();
 
-//document.getElementById("btn-expedition").onclick = stake;
+document.getElementById("btn-expedition").onclick = stake;
