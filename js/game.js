@@ -161,7 +161,7 @@ async function getStakedSurvivors() {
     params:{}
   }
   const stakedSurvivors = await Moralis.executeFunction(options);
-  stakedSurvivors.then(result => {return result;}).catch(err => {console.log(err);})
+  stakedSurvivors.result.then(result => {return result;}).catch(err => {console.log(err);})
 }
 
 cashedSession();
