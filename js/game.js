@@ -18,8 +18,6 @@ const linkArr = [];
 
 const selectedSurvivors = [];
 
-stakedSurvivors = [];
-
 
 Moralis.start({ serverUrl, appId });
 async function cashedSession(){
@@ -162,7 +160,7 @@ async function getStakedSurvivors() {
     }],
     params:{}
   }
-  stakedSurvivors = await Moralis.executeFunction(options).result;
+  stakedSurvivors = await Moralis.executeFunction(options);
   return stakedSurvivors;
 }
 
