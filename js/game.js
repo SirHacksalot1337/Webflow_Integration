@@ -6,7 +6,7 @@
 const serverUrl = "https://ilfapq8h4jyq.usemoralis.com:2053/server";
 const appId = "C2fy4GQRDTtKZpuTPEElzLXFObQMotGnvt7uFMT2";
 const contract = "0xd203058935aa3Bac85AA4a6abF5732c5d0ebf74D"
-const stakeContract = "0xaf9a036655bfE05ab653B57C16c9983c944CF43B"
+const stakeContract = "0xcaacb146695583058c7217fed90C402B436F74Fe"
 //const tokenContract = "0xe8Be2Ff20b3eefD7f068ca9e94808C036F283452"
 const chain = "avalanche testnet"
 
