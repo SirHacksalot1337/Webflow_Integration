@@ -18,7 +18,7 @@ const linkArr = [];
 
 const selectedSurvivors = [];
 
-const stakedSurvivors = [];
+stakedSurvivors = [];
 
 
 Moralis.start({ serverUrl, appId });
@@ -33,6 +33,7 @@ async function cashedSession(){
       //const balance = await Moralis.Web3API.account.getTokenBalances({chain:chain, token_address:tokenContract});
       //console.log(balance);
       returnUserNFTData();
+      console.log(getStakedSurvivors());
    } catch(error) {
      console.log(error)
    }
@@ -167,4 +168,3 @@ async function getStakedSurvivors() {
 
 cashedSession();
 document.getElementById("btn-expedition").onclick = stake;
-console.log(getStakedSurvivors());
