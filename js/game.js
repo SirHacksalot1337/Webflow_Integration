@@ -145,7 +145,7 @@ async function stake() {
 async function getStakedSurvivors() {
   let options = {
     contractAddress: stakeContract,
-    functionName: "stake",
+    functionName: "getSurvivors",
     abi:[{
       "inputs": [],
       "name": "getSurvivors",
