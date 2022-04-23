@@ -18,6 +18,7 @@ const linkArr = [];
 
 const selectedSurvivors = [];
 
+const stakedSurvivors = [];
 
 
 Moralis.start({ serverUrl, appId });
@@ -141,6 +142,29 @@ async function stake() {
   location.reload();
 }
 
-cashedSession();
+function getStakedSurvivors() {
+  let options = {
+    contractAddress: stakeContract,
+    functionName: "stake",
+    abi:[{
+      "inputs": [],
+      "name": "getSurvivors",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }],
+    params:{}
+  }
+  stakedSurvivors = await Moralis.executeFunction(options);
+  return stakedSurvivors;
+}
 
+cashedSession();
 document.getElementById("btn-expedition").onclick = stake;
+console.log(getStakedSurvivors());
