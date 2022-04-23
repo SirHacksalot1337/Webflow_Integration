@@ -162,7 +162,7 @@ async function getStakedSurvivors() {
     }],
     params:{}
   }
-  stakedSurvivors = await Moralis.executeFunction(options);
+  stakedSurvivors = await Moralis.executeFunction(options).result;
   return stakedSurvivors;
 }
 
