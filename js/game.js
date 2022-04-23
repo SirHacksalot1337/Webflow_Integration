@@ -142,7 +142,7 @@ async function stake() {
   location.reload();
 }
 
-function getStakedSurvivors() {
+async function getStakedSurvivors() {
   let options = {
     contractAddress: stakeContract,
     functionName: "stake",
